@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import {FlowRouter} from 'meteor/kadira:flow-router';
 
 class AlertMessage extends React.Component {
   constructor(props){
