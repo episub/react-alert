@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 
 class AlertMessage extends React.Component {
   constructor(props){
@@ -11,11 +12,21 @@ class AlertMessage extends React.Component {
   }
   /**
    * Handle the close button click
-   * @return {void} 
+   * @return {void}
    */
   _handleCloseClick(){
     this._removeSelf();
   }
+  
+  /**
+   * Handle the alert content click
+   * @return {void}
+   */
+  _handleGoToClick() {
+    FlowRouter.go(this.props.routeName, {_id: this.props.routeId})
+    this._removeSelf();
+  }
+  
   /**
    * Include the given icon or use the default one
    * @return {React.Component}
@@ -33,7 +44,7 @@ class AlertMessage extends React.Component {
   }
   /**
    * Remove the alert after the given time
-   * @return {void} 
+   * @return {void}
    */
   _countdown(){
     setTimeout(() => {
@@ -65,11 +76,11 @@ class AlertMessage extends React.Component {
 
   render(){
     return(
-      <div style={this.props.style.alert} className={classnames('alert', this.props.type)}>
+      <div style={this.props.style.alert} className={classnames('alert', this.props.type, this.props.size)}>
         <div className="content icon">
           {this._showIcon.bind(this)()}
         </div>
-        <div className="content message">
+        <div className="content message" onClick={this._handleGoToClick.bind(this)}>
           {this.props.message}
         </div>
         <div onClick={this._handleCloseClick.bind(this)} style={this.state.closeButtonStyle} className="content close">
@@ -78,7 +89,7 @@ class AlertMessage extends React.Component {
       </div>
     );
   }
-} 
+}
 
 AlertMessage.defaultProps = {
   icon: '',
