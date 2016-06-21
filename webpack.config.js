@@ -45,7 +45,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: paths.styles,
-        loader: 'style!css!postcss!stylus'
+        loader: 'css'
       },
       {
         test: /\.(jpg|png|gif)$/,
