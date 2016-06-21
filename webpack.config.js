@@ -56,7 +56,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.styl']
+    extensions: ['', '.js', '.jsx', '.css']
   },
 
   externals: webpackUMDExternal({

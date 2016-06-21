@@ -86,32 +86,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(3);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./alert.css", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./alert.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -491,9 +465,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  /**
 	   * Show the alert in the page with success type
-	   * @param  {string} message 
-	   * @param  {Object} options 
-	   * @return {void}         
+	   * @param  {string} message
+	   * @param  {Object} options
+	   * @return {void}
 	   */
 
 	  _createClass(AlertContainer, [{
@@ -507,8 +481,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * Show the alert in the page with error type
-	     * @param  {string} message 
-	     * @param  {Object} options 
+	     * @param  {string} message
+	     * @param  {Object} options
 	     * @return {void}
 	     */
 	  }, {
@@ -521,7 +495,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    /**
-	     * Show the alert in the page with info type 
+	     * Show the alert in the page with info type
 	     * @param  {string} message
 	     * @param  {Object} options
 	     * @return {void}
