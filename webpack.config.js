@@ -15,7 +15,7 @@ var paths = {
   modules: path.resolve(__dirname, './node_modules')
 }
 
-module.exports = {  
+module.exports = {
   entry: {
     alert: [
       paths.js.index
@@ -42,8 +42,8 @@ module.exports = {
         include: [paths.js.index, paths.js.dev],
         loader: 'babel'
       },
-      { 
-        test: /\.styl$/,
+      {
+        test: /\.css$/,
         include: paths.styles,
         loader: 'style!css!postcss!stylus'
       },
